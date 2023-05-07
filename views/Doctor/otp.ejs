@@ -1,0 +1,47 @@
+<%- include('../partials/sign/header') %>
+            <div class="col-md-6 position-relative">
+                <div class="sign-in-from">
+                    <h2 class="mb-0">Email Address Verification</h2>
+                    <h4>An OTP has been sent to your email ending with 
+                        ********<%=email.slice(email.length-14,email.length)%></h4>
+                    <form class="mt-4" method="POST" action="/verifyEmaildoctor-<%=otpId%> ">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Enter OTP</label>
+                            <input type="number" name="enteredOtp" class="form-control mb-0" id="exampleInputEmail1" placeholder="One Time Password">
+                        </div>
+                        <% if(error != undefined && error.length > 0){ %>
+                            <div class="alert alert-danger text-center">
+                                <%= error %>
+                            </div>
+                        <% } %>
+                        
+                        <% if(success != undefined && success.length > 0){ %>
+                            <div class="alert alert-success">
+                                <%= success %>
+                            </div>
+                        <% } %>
+                        <div class="d-inline-block w-100">
+                            <button class="btn btn-primary float-right" type="submit">Sign Up</button>
+                        </div>
+                        
+                        <div class="sign-info">
+                            <span class="dark-color d-inline-block line-height-2">Already Have Account ? 
+                                <a href="/signindoctor">Log In</a>
+                            </span>
+                            <ul class="iq-social-media">
+                                <li><a href="#"><i class="fas fa-home" aria-hidden="true"></i></a></li>
+                                <li><a href="/">Home</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Signup in END -->
+<%- include('../partials/sign/footer') %>
+</body>
+
+<!-- Mirrored from iqonic.design/themes/xray/html/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Mar 2020 16:45:10 GMT -->
+</html>
